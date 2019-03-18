@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import configureStore from './store/configureStore';
 import initialState from './store/initialState';
 import News from './components/News';
 import Profile from "./components/Profile";
+import PageNotFound from "./components/PageNotFound";
 
 const store = configureStore(initialState);
 
@@ -31,8 +32,11 @@ class App extends Component {
             </ul>
           </nav>
 
-          <Route path='/news' component={News} />
-          <Route path='/profile' component={Profile} />
+          <Switch>
+            <Route path='/news' component={News} />
+            <Route path='/profile' component={Profile} />
+            <Route component={PageNotFound} />
+          </Switch>
         </Router>
       </Provider>
     );
