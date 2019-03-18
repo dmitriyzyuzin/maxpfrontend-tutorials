@@ -1,0 +1,16 @@
+.form {
+
+}
+
+.form__row {
+    width: 180px;
+    margin: 10px;
+}
+
+.form__row input {
+    height: 20px;
+}
+
+.form__button {
+
+}

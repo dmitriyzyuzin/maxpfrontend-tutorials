@@ -7,6 +7,9 @@ import initialState from './store/initialState';
 import News from './components/News';
 import Profile from "./components/Profile";
 import PageNotFound from "./components/PageNotFound";
+import LoginForm from "./components/LoginForm/LoginForm";
+import NavBar from "./components/NavBar/NavBar";
+import { navBarItems } from './config';
 
 const store = configureStore(initialState);
 
@@ -15,24 +18,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <nav>
-            <ul>
-              <li>
-                <Link to='/'>Главная</Link>
-              </li>
-              <li>
-                <Link to='/login'>Войти</Link>
-              </li>
-              <li>
-                <Link to='/news'>Новости</Link>
-              </li>
-              <li>
-                <Link to='/profile'>Профиль</Link>
-              </li>
-            </ul>
-          </nav>
+          <NavBar items={navBarItems} />
 
           <Switch>
+            <Route path='/login' component={LoginForm} />
             <Route path='/news' component={News} />
             <Route path='/profile' component={Profile} />
             <Route component={PageNotFound} />
