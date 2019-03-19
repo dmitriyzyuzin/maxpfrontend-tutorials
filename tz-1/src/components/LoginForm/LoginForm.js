@@ -12,8 +12,16 @@ class LoginForm extends React.Component {
     };
 
     handleSubmit = event => {
-        console.log('submit');
         event.preventDefault();
+        this.props.onFormSubmit(this.state.user, this.state.password);
+        this.clearForm();
+    };
+
+    clearForm = () => {
+        this.setState({
+            user: '',
+            password: '',
+        });
     };
 
     handleBlur = event => {
@@ -45,6 +53,7 @@ class LoginForm extends React.Component {
                         type='text'
                         name='user'
                         className={errors.user ? 'invalid': null}
+                        value={this.state.user}
                         onBlur={this.handleBlur}
                         onChange={this.handleUsernameChange}
                     />
@@ -55,6 +64,7 @@ class LoginForm extends React.Component {
                         type='password'
                         name='password'
                         className={errors.password ? 'invalid': null}
+                        value={this.state.password}
                         onBlur={this.handleBlur}
                         onChange={this.handlePasswordChange}
                     />

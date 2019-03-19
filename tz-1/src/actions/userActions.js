@@ -1,8 +1,12 @@
 import { LOG_IN } from "./actionTypes";
 
-export function login(payload) {
+export function login(user, password) {
     return {
         type: LOG_IN,
-        payload: payload
+        payload: {
+            user: user,
+            password: password
+        }
     };
 }
+

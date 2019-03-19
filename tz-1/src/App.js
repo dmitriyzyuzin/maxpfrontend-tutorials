@@ -3,15 +3,14 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import configureStore from './store/configureStore';
-import initialState from './store/initialState';
 import News from './components/News';
 import Profile from "./components/Profile";
 import PageNotFound from "./components/PageNotFound";
-import LoginForm from "./components/LoginForm/LoginForm";
+import LoginFormContainer from "./containers/LoginFormContainer";
 import NavBar from "./components/NavBar/NavBar";
 import { navBarItems } from './config';
 
-const store = configureStore(initialState);
+const store = configureStore();
 
 class App extends Component {
   render() {
@@ -21,7 +20,7 @@ class App extends Component {
           <NavBar items={navBarItems} />
 
           <Switch>
-            <Route path='/login' component={LoginForm} />
+            <Route path='/login' component={LoginFormContainer} />
             <Route path='/news' component={News} />
             <Route path='/profile' component={Profile} />
             <Route component={PageNotFound} />
