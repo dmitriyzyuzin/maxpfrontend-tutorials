@@ -11,6 +11,10 @@
     height: 20px;
 }
 
+.form__row .invalid {
+    border: 1px solid red;
+}
+
 .form__button {
 
 }
