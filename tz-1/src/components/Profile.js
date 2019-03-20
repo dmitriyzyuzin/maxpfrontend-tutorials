@@ -4,7 +4,7 @@ class Profile extends React.Component {
     render() {
         return (
             <div>
-                Профиль
+                Админ парольный
             </div>
         );
     }

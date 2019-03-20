@@ -1,4 +1,4 @@
-import { LOG_IN } from "./actionTypes";
+import { LOG_IN, LOG_OUT } from "./actionTypes";
 
 export function login(user, password) {
     return {
@@ -10,3 +10,8 @@ export function login(user, password) {
     };
 }
 
+export function logout() {
+    return {
+        type: LOG_OUT
+    };
+}

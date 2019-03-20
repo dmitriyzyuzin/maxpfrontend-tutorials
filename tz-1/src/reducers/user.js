@@ -13,6 +13,11 @@ const user = (state = initialState, action) => {
                 ...state,
                 isLoggedIn: auth(user, password)
             });
+        case 'LOG_OUT':
+            return Object.assign({}, state, {
+                ...state,
+                isLoggedIn: false
+            });
         default:
             return state;
     }

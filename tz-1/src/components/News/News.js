@@ -3,8 +3,8 @@ import React from 'react';
 class News extends React.Component {
     render() {
         return (
-            <div>
-                Новости
+            <div className="news">
+                Какие-то новости...
             </div>
         );
     }
